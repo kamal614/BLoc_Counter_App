@@ -1,7 +1,8 @@
-import 'package:bloc_counter/cubit/counter_cubit.dart';
 import 'package:bloc_test/bloc_test.dart';
-// import 'package:test_core/test_core.dart';
+
 import 'package:test/test.dart';
+
+import '../../logic/cubit/counter_cubit.dart';
 
 void main() {
   group('CounterCubit', () {

@@ -1,13 +1,13 @@
-import 'package:bloc_counter/cubit/counter_cubit.dart';
+import 'package:bloc_counter/logic/cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'screen/homescreen.dart';
+import 'presentation/screen/homescreen.dart';
 
 void main() {
   final CounterState counterState1 = CounterState(counterValue: 1);
   final CounterState counterState2 = CounterState(counterValue: 1);
-  print(counterState1 == counterState2);
+
   runApp(const MyApp());
 }
 
