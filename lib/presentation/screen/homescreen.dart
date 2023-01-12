@@ -1,3 +1,4 @@
+import 'package:bloc_counter/presentation/screen/secondscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,12 +24,11 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                FloatingActionButton(
+                ElevatedButton(
                   onPressed: () {
                     BlocProvider.of<CounterCubit>(context).decrement();
                   },
-                  tooltip: "Decrement",
-                  child: const Icon(Icons.remove),
+                  child: const Text("-"),
                 ),
                 const SizedBox(width: 15),
                 BlocConsumer<CounterCubit, CounterState>(
@@ -52,18 +52,23 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),
                 const SizedBox(width: 15),
-                FloatingActionButton(
-                  onPressed: () {
-                    BlocProvider.of<CounterCubit>(context).increment();
-                  },
-                  tooltip: "Increment",
-                  child: const Icon(Icons.add),
-                ),
+                ElevatedButton(
+                    onPressed: () {
+                      BlocProvider.of<CounterCubit>(context).increment();
+                    },
+                    child: const Text("+"))
               ],
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-                onPressed: () {}, child: const Text("Go to Second screen"))
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => BlocProvider.value(
+                            value: BlocProvider.of<CounterCubit>(context),
+                            child: const SeconScreen(),
+                          )));
+                },
+                child: const Text("Go to Second screen"))
           ],
         ),
       ),
