@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc_counter/logic/cubit/counter_cubit.dart';
 import 'package:bloc_counter/presentation/screen/secondscreen.dart';
 import 'package:bloc_counter/presentation/screen/thirdscreen.dart';
@@ -10,8 +12,15 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final CounterCubit _counterCubit = CounterCubit();
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -21,7 +30,20 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const MyHomePage(),
+        routes: {
+          '/': (context) => BlocProvider.value(
+                value: _counterCubit,
+                child: const MyHomePage(),
+              ),
+          '/secondScreen': (context) => BlocProvider.value(
+                value: _counterCubit,
+                child: const SecondScreen(),
+              ),
+          '/thirdScreen': (context) => BlocProvider.value(
+                value: _counterCubit,
+                child: const ThirdScreen(),
+              ),
+        },
       ),
     );
   }

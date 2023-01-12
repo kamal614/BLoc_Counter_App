@@ -6,14 +6,14 @@ import '../../logic/cubit/counter_cubit.dart';
 
 // import '../cubit/counter_cubit.dart';
 
-class SeconScreen extends StatefulWidget {
-  const SeconScreen({super.key});
+class SecondScreen extends StatefulWidget {
+  const SecondScreen({super.key});
 
   @override
-  State<SeconScreen> createState() => _SeconScreenState();
+  State<SecondScreen> createState() => _SecondScreenState();
 }
 
-class _SeconScreenState extends State<SeconScreen> {
+class _SecondScreenState extends State<SecondScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

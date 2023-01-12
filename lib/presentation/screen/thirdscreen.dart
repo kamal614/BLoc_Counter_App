@@ -62,7 +62,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: const Text("Go to Second screen"))
+                child: const Text("Back"))
           ],
         ),
       ),

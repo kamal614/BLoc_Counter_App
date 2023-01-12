@@ -60,13 +60,15 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(height: 20),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (_) => BlocProvider.value(
-                            value: BlocProvider.of<CounterCubit>(context),
-                            child: const SeconScreen(),
-                          )));
+                  Navigator.of(context).pushNamed('/secondScreen');
                 },
-                child: const Text("Go to Second screen"))
+                child: const Text("Go to Second screen")),
+            const SizedBox(height: 20),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/thirdScreen');
+                },
+                child: const Text("Go to Third screen")),
           ],
         ),
       ),
