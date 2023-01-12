@@ -4,8 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../logic/cubit/counter_cubit.dart';
 
-// import '../cubit/counter_cubit.dart';
-
 class ThirdScreen extends StatefulWidget {
   const ThirdScreen({super.key});
 
@@ -62,11 +60,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
             const SizedBox(height: 20),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (_) => BlocProvider.value(
-                            value: BlocProvider.of<CounterCubit>(context),
-                            child: const SeconScreen(),
-                          )));
+                  Navigator.pop(context);
                 },
                 child: const Text("Go to Second screen"))
           ],
